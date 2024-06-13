@@ -1,0 +1,6 @@
+{
+    "name": "compat",
+    "tree": {
+        "$path": "lib"
+    }
+}

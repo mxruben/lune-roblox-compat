@@ -1,0 +1,23 @@
+{
+    "name": "compat",
+    "tree": {
+        "$className": "DataModel",
+        "ServerScriptService": {
+            "lib": {
+                "$path": "lib"
+            },
+            "tests": {
+                "$path": "tests"
+            },
+            "runtests": {
+                "$path": "runtests.server.luau"
+            }
+        },
+        "HttpService": {
+            "$className": "HttpService",
+            "$properties": {
+                "HttpEnabled": true
+            }
+        }
+    }
+}

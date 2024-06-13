@@ -1,0 +1,17 @@
+[package]
+name = "mxruben/compat"
+description = "Compatibility layer for the Roblox API and Lune standard libraries."
+license = "MIT"
+authors = ["Maxwell Ruben"]
+version = "0.1.0"
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+exclude = [
+    "tests",
+    ".vscode",
+    ".git",
+    "test.project.json",
+    "sourcemap.json",
+    "runtests.luau",
+    "runtests.server.luau"
+]
