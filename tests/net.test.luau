@@ -4,11 +4,12 @@ local roblox
 if string.sub(_VERSION, 1, 4) == "Lune" then
     net = require("../lib/net")
     roblox = false
-else
+elseif game and UserSettings then
     net = require(script.Parent.Parent.lib.net)
     roblox = true
+else
+    error("Incompatible platform!")
 end
-
 
 local function assertEqual(actual, expected, message: string?)
     assert(actual == expected, message or string.format("Expected %s but got %s", tostring(expected), tostring(actual)))
