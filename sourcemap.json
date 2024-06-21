@@ -1,1 +1,0 @@
-{"name":"compat","className":"ModuleScript","filePaths":["lib/init.luau","default.project.json"],"children":[{"name":"net","className":"ModuleScript","filePaths":["lib/net.luau"]}]}
