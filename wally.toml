@@ -3,7 +3,7 @@ name = "mxruben/compat"
 description = "Compatibility layer for the Roblox API and Lune standard libraries."
 license = "MIT"
 authors = ["Maxwell Ruben"]
-version = "0.1.1"
+version = "0.1.2"
 registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
 exclude = [
@@ -13,5 +13,7 @@ exclude = [
     "test.project.json",
     "sourcemap.json",
     "runtests.luau",
-    "runtests.server.luau"
+    "runtests.server.luau",
+    "compat.rbxl",
+    "compat.rbxl.lock"
 ]
