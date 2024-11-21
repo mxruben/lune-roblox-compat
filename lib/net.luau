@@ -28,9 +28,50 @@ if string.sub(_VERSION, 1, 4) == "Lune" then
     net.urlEncode = luneNet.urlEncode
     net.request = luneNet.request :: (config: any) -> FetchResponse
 
+    function net.uuidGenerate(wrapInCurlyBraces: boolean?): string
+        wrapInCurlyBraces = wrapInCurlyBraces == nil and true or wrapInCurlyBraces
+        local uuid = wrapInCurlyBraces and '{' or ''
+
+        for _ = 1, 8 do
+            uuid ..= string.format("%x", math.random(0, 15))
+        end
+
+        uuid ..= '-'
+
+        for _ = 1, 4 do
+            uuid ..= string.format("%x", math.random(0, 15))
+        end
+
+        uuid ..= "-4"
+
+        for _ = 1, 3 do
+            uuid ..= string.format("%x", math.random(0, 15))
+        end
+
+        uuid ..= '-'
+        uuid ..= string.format("%x", math.random(8, 11))
+
+        for _ = 1, 3 do
+            uuid ..= string.format("%x", math.random(0, 15))
+        end
+
+        uuid ..= '-'
+
+        for _ = 1, 12 do
+            uuid ..= string.format("%x", math.random(0, 15))
+        end
+
+        uuid = wrapInCurlyBraces and (uuid..'}') or uuid
+        return uuid
+    end
+
 -- Roblox
 elseif game and UserSettings then
     local HttpService = game:GetService("HttpService")
+
+    function net.uuidGenerate(wrapInCurlyBraces: boolean?): string
+        return HttpService:GenerateGUID(wrapInCurlyBraces)
+    end
 
     function net.jsonEncode(value: any): string
         return HttpService:JSONEncode(value)
